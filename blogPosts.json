@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Luna",
+    "title": "The Galactic Chronicles",
+    "category": "Science Fiction",
+    "message": "In the year 3021, humanity embarked on its greatest adventure—colonizing the moons of Jupiter. It wasn’t easy. Space pirates, rogue AI, and interstellar storms were just the beginning. Yet, the pioneers pressed on. Their legacy was etched among the stars, proving that even in the cold vacuum of space, hope shines brightest.",
+    "time": "Mon Sep 26 2024 14:34:12",
+    "id": 2
+  },
+  {
+    "name": "Oliver",
+    "title": "A Dog's Wisdom",
+    "category": "Lifestyle",
+    "message": "If you ever wonder how to live a good life, just watch a dog. Wake up excited every day. Eat when you’re hungry. Take naps often. Always greet loved ones like it's been forever, even if they just left five minutes ago. And most importantly—never pass up the chance to chase a squirrel.",
+    "time": "Mon Sep 27 2024 07:19:28",
+    "id": 3
+  },
+  {
+    "name": "Isla",
+    "title": "Lost in the Clouds",
+    "category": "Poetry",
+    "message": "A sky so vast, a dream untold,\nThe winds of change, both fierce and bold.\nAmong the clouds, I drift and roam,\nIn every gust, I find my home.\n\nA feather's fall, a whispered breeze,\nLife's gentle pull with subtle ease.\nLost in the clouds, I find my way,\nAnd dance with twilight at the end of day.",
+    "time": "Mon Sep 30 2024 20:41:57",
+    "id": "4"
+  }
+]

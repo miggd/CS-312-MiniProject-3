@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Track crypto prices, top gainers, and market summary in real-time.">
+    <meta name="author" content="Crypto Enthusiast">
+    <meta name="keywords" content="Crypto, Cryptocurrency, Bitcoin, Ethereum, Market Overview, Top Gainers">
+
+    <title><%= title %></title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- External Stylesheets -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="text-center mt-4"><%= message %></h1>
+    </header>
+
+    <main class="container mt-5">
+        <p style="font-size: 20px; text-align: center;">Search for crypto prices or view the top gainers and market summary below.</p>
+
+        <!-- Crypto Price Search Form -->
+        <div id="form-div">
+            <form action="/" method="GET" class="mt-4">
+                <div class="form-group">
+                    <label for="symbol">Enter Crypto Symbol (e.g., BTC, DOGE):</label>
+                    <input type="text" id="symbol" name="symbol" class="form-control" placeholder="Enter symbol" value="<%= symbol || '' %>">
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Get Price</button>
+            </form>
+        </div>
+
+        <div class="placeholder mt-4"></div>
+
+        <!-- Display Price Data if Available -->
+        <% if (priceData) { %>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Price Details for <%= priceData.symbol.toUpperCase() %>:</h5>
+                    <p>Current Value: $<%= priceData.current_price %></p>
+                </div>
+            </div>
+        <% } %>
+
+        <div class="placeholder mt-4"></div>
+
+        <!-- Top Gainers and Top Losers Section -->
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h2 class="text-center">Top Gainers (24h)</h2>
+                <% if (topGainers.length > 0) { %>
+                    <ul class="list-group mt-3">
+                        <% topGainers.forEach(coin => { %>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <strong><%= coin.name %> (<%= coin.symbol.toUpperCase() %>)</strong>
+                                <span>Price: $<%= coin.current_price %>, Change: <span class="text-success"><%= coin.price_change_percentage_24h.toFixed(2) %>%</span></span>
+                            </li>
+                        <% }); %>
+                    </ul>
+                <% } else { %>
+                    <p>No data for gainers available.</p>
+                <% } %>
+            </div>
+
+            <div class="col-md-6">
+                <h2 class="text-center">Top Losers (24h)</h2>
+                <% if (topLosers.length > 0) { %>
+                    <ul class="list-group mt-3">
+                        <% topLosers.forEach(coin => { %>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <strong><%= coin.name %> (<%= coin.symbol.toUpperCase() %>)</strong>
+                                <span>Price: $<%= coin.current_price %>, Change: <span class="text-danger"><%= coin.price_change_percentage_24h.toFixed(2) %>%</span></span>
+                            </li>
+                        <% }); %>
+                    </ul>
+                <% } else { %>
+                    <p>No data for losers available.</p>
+                <% } %>
+            </div>
+        </div>
+
+        <div class="placeholder mt-4"></div>
+
+        <!-- Market Overview Section -->
+        <div class="mt-5">
+            <h2 class="text-center">Global Cryptocurrency Market Overview</h2>
+            <% if (marketOverview) { %>
+                <p>Total Market Cap: $<%= marketOverview.total_market_cap.usd.toLocaleString() %></p>
+                <p>24h Trading Volume: $<%= marketOverview.total_volume.usd.toLocaleString() %></p>
+                <p>Bitcoin Dominance: <%= marketOverview.market_cap_percentage.btc.toFixed(2) %>%</p>
+            <% } else { %>
+                <p>No market data available.</p>
+            <% } %>
+        </div>
+    </main>
+
+    <footer class="text-center mt-5">
+        <p>&copy; 2024 Crypto Enthusiast. All rights reserved.</p>
+    </footer>
+</body>
+</html>

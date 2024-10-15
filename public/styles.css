@@ -1,0 +1,81 @@
+body {
+    background-color: #f0f4f8; /* Light blue-gray for a cool and soft feel */
+    font-family: 'Helvetica', sans-serif;
+}
+
+header h1 {
+    text-align: center;
+    margin-top: 50px;
+    color: #333; /* Dark gray for text contrast */
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+form {
+    border: 3px dashed #6c757d; /* Dashed border for a more playful look */
+    width: 28em;
+    margin: 50px auto;
+    position: relative;
+    padding: 20px;
+    background-color: #ffffff; /* White for form background */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+form * {
+    margin: 8px 0;
+}
+
+form button {
+    float: right;
+    margin-right: 20px;
+    background-color: #5a9; /* Light green for a fresh feel */
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+form button:hover {
+    background-color: #489; /* Darker green for hover effect */
+}
+
+.blog-post {
+    border: 2px solid #8e44ad; /* Purple border for a vibrant touch */
+    border-radius: 15px;
+    margin: 25px;
+    background-color: #faf3f3; /* Light pink for a soft appearance */
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 15px;
+    padding: 15px;
+}
+
+.post-header {
+    padding: 5px;
+    font-weight: bold;
+    color: #8e44ad; /* Matching purple header text */
+}
+
+.post-body {
+    display: flex;
+    flex-direction: column; /* Column layout for a different feel */
+    gap: 10px;
+    color: #555; /* Medium gray for body text */
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.placeholder {
+    height: 60px; /* Slightly larger placeholder */
+    background-color: #d3d3d3; /* Light gray to indicate placeholder content */
+    border-radius: 5px;
+}
